@@ -12,7 +12,9 @@ const pdfRoutes_1 = __importDefault(require("./routes/pdfRoutes"));
 const awsRoutes_1 = __importDefault(require("./routes/awsRoutes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: '*'
+}));
 app.use(express_1.default.json());
 // app.use("/", movieRoutes);
 // app.use("/", postsRoutes);
@@ -24,5 +26,5 @@ app.use("/", userRoutes_1.default);
 app.use("/", pdfRoutes_1.default);
 app.use("/", awsRoutes_1.default);
 app.listen(3000, '0.0.0.0', () => {
-    console.log(`Server is running on http://localhost:3000`);
+    console.log(`Server is running on 18.231.43.54:3000`);
 });
